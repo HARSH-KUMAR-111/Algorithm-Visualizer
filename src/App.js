@@ -14,6 +14,7 @@ import MergeSort from "./pages/MergeSort";
 import SelectionSort from "./pages/Selectionsort";
 
 import { SnackbarProvider } from "notistack";
+import Sudoku from "./pages/Sudoku";
 
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/singlylinklist" exact component={SinglyLinkList} />
 					<Route path="/dfs" exact component={Dfs} />
 					<Route path="/dijkstra" exact component={Dijkstra} />
+					<Route path="/Sudoku" exact component={Sudoku} />
 				</Switch>
 			</div>
 		</SnackbarProvider>

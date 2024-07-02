@@ -6,6 +6,7 @@ import QuickSortImg from "./../images/Algo Pics/QuickSort.png";
 import LinkedListImg from "./../images/Algo Pics/LinkedList.png";
 import DfsImg from "./../images/Algo Pics/Dfs.png";
 import DijkstraImg from "./../images/Algo Pics/Dijkstra.png";
+import SudokuImg from "./../images/Algo Pics/sudokuImg.jpeg"
 import SelectionSort from "./Selectionsort";
 import MergeSort from "./MergeSort";
 import { Link } from "react-router-dom";
@@ -83,6 +84,13 @@ function Home() {
 				url: "/dijkstra",
 				desc:
 					"Dijkstra is a path finding algorithm.It is used in .It can find shortest path between two nodes in a Graph.It can perform only in weighted graph.To find two nodes we can use adjacency list or matrix.  ",
+			},
+			{
+				title: "Sudoku",
+				imgSrc: SudokuImg,
+				url: "/sudoku",
+				desc:
+					"This is a sudoku solver.",
 			},
 		],
 	];
