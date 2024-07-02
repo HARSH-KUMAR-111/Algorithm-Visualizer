@@ -3,13 +3,11 @@ import "./../css/pages/Dijkstra.css";
 import Canvas from "./components/Canvas";
 import useToggler from "./components/Toggler";
 import sleepFun from "./components/utils/sleepFun";
-import VideoModal from "./components/VideoModal";
 import { Button, IconButton } from "@material-ui/core";
 import { Select } from "antd";
 import SearchIcon from "@material-ui/icons/Search";
 import PlayCircleFilledWhiteIcon from "@material-ui/icons/PlayCircleFilledWhite";
 import { ClearOutlined } from "@ant-design/icons";
-import demo from "./../videos/DijkstraVideo-No-Edit.mp4";
 //This Only for snackbar
 import { useSnackbar } from "notistack";
 import Zoom from "@material-ui/core/Zoom";
@@ -63,11 +61,7 @@ function Dijkstra() {
 		<div
 		// style={{ position: "absolute" }}
 		>
-			<VideoModal
-				isVisible={isModalVisible}
-				setVisible={setModalVisible}
-				videoUrl={demo}
-			/>
+			
 			<Canvas reload={reload} setArr={setArr} setReload={setReload} />
 
 			<div className="navigation-area">
@@ -80,14 +74,6 @@ function Dijkstra() {
 					<Option value={60}>Medium</Option>
 					<Option value={150}>Slow</Option>
 				</Select>
-
-				<IconButton
-					onClick={handleDemo}
-					color="secondary"
-					aria-label="Play Demo Video"
-				>
-					<PlayCircleFilledWhiteIcon />
-				</IconButton>
 
 				<div className="DijkstraButton-Container">
 					<Button
