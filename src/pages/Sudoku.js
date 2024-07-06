@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import "./../css/pages/Sudoku.css";
+import { Button, IconButton } from "@material-ui/core";
+import EqualizerIcon from "@material-ui/icons/Equalizer";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
+
 const generateEmptyBoard = () => {
   return Array(9).fill().map(() => Array(9).fill(0));
 };
@@ -84,22 +88,51 @@ const solveSudoku = (board) => {
 
 const Sudoku = () => {
   const [board, setBoard] = useState(generateEmptyBoard());
+  const [showPopup, setShowPopup] = useState(false);
 
   const generatePuzzle = () => {
     const newBoard = generateEmptyBoard();
     setBoard(fillBoard(newBoard));
+    setShowPopup(false);
   };
 
   const solvePuzzle = () => {
     const solvedBoard = JSON.parse(JSON.stringify(board));
     setBoard(solveSudoku(solvedBoard));
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
   };
 
   return (
-    <div>
-      <h1>Sudoku</h1>
+    <div className="main">
+      <div>
+        <h2
+          style={{
+            fontWeight: "700",
+            padding: "2px",
+            textTransform: "uppercase",
+            textAlign: "center",
+            color: "#101820FF",
+            background: "#fff",
+            width: "20%",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "5px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            borderRadius: "3px",
+          }}
+        >
+          Sudoku Solver
+          <hr
+            style={{ width: "200px", border: "none", height: "1px" }}
+            color="#e7e7e7"
+          />
+        </h2>
+      </div>
       <div className="sudoku-board">
-      
         {board.map((row, rowIndex) => (
           <div key={rowIndex} className="sudoku-row">
             {row.map((cell, cellIndex) => (
@@ -114,8 +147,33 @@ const Sudoku = () => {
           </div>
         ))}
       </div>
-      <button onClick={generatePuzzle}>Generate Puzzle</button>
-      <button onClick={solvePuzzle}>Solve Puzzle</button>
+      <div className="sudoku-buttons">
+        <Button
+          size="medium"
+          variant="contained"
+          startIcon={<EqualizerIcon />}
+          color="secondary"
+          onClick={generatePuzzle}
+          style={{ marginRight: '10px', marginTop: '10px' }}
+        >
+          Generate Puzzle
+        </Button>
+        <Button
+          size="medium"
+          variant="contained"
+          startIcon={<ShuffleIcon style={{ color: 'white' }} />}
+          color="primary"
+          onClick={solvePuzzle}
+          style={{ marginTop: '10px' }}
+        >
+          Solve Puzzle
+        </Button>
+      </div>
+      {showPopup && (
+        <div className="popup">
+          Puzzle Solved!
+        </div>
+      )}
     </div>
   );
 };

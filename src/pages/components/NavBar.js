@@ -20,7 +20,7 @@ function NavBar() {
 				<NavLink to="/dfs">DFS</NavLink>
 
 				<Link to="/dijkstra">Dijkstra Algo</Link>
-				<Link to="/sudoku"></Link>
+				<Link to="/sudoku">Sudoku Solver</Link>
 			</div>
 		</nav>
 	);

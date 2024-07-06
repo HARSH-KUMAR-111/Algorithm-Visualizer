@@ -6,7 +6,7 @@ import QuickSortImg from "./../images/Algo Pics/QuickSort.png";
 import LinkedListImg from "./../images/Algo Pics/LinkedList.png";
 import DfsImg from "./../images/Algo Pics/Dfs.png";
 import DijkstraImg from "./../images/Algo Pics/Dijkstra.png";
-import SudokuImg from "./../images/Algo Pics/sudokuImg.jpeg"
+import SudokuSolver from "./../images/Algo Pics/SudokuSolver.png"
 import SelectionSort from "./Selectionsort";
 import MergeSort from "./MergeSort";
 import { Link } from "react-router-dom";
@@ -87,10 +87,10 @@ function Home() {
 			},
 			{
 				title: "Sudoku",
-				imgSrc: SudokuImg,
+				imgSrc: SudokuSolver,
 				url: "/sudoku",
 				desc:
-					"This is a sudoku solver.",
+					"The Sudoku Solver and Visualizer is a React-based web tool that lets users generate, solve, and visualize Sudoku puzzles. It offers an intuitive interface for interacting with the puzzle and demonstrates the backtracking algorithm step-by-step as it finds the solution.",
 			},
 		],
 	];
